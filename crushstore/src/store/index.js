@@ -94,7 +94,7 @@ const actions = {
     commit("setCurrentCategory", name);
   },
   setCategoryItemsAction({ commit }, name) {
-    const fetchUrl = `https://crushstoreapi.herokuapp.com/products/getbycategory/${name}`;
+    const fetchUrl = `localhost:3000/products/getbycategory/${name}`;
 
     fetch(fetchUrl)
       .then((response) => response.json())
@@ -103,7 +103,7 @@ const actions = {
       });
   },
   getCartAction({ commit }) {
-    fetch(`https://crushstoreapi.herokuapp.com/user/cart/${state.userid}`)
+    fetch(`localhost:3000/user/cart/${state.userid}`)
       .then((response) => response.json())
       .then((res) => {
         commit("getCart", res);
@@ -111,7 +111,7 @@ const actions = {
   },
   addToCart({ dispatch }, id) {
     state.addedCartNotification = true;
-    fetch("https://crushstoreapi.herokuapp.com/user/cart/add", {
+    fetch("localhost:3000/user/cart/add", {
       method: "post",
       headers: {
         Accept: "application/json, text/plain, /*",
@@ -129,7 +129,7 @@ const actions = {
   },
   removeFromCart({ dispatch }, id) {
     state.removedCartNotification = true;
-    fetch("https://crushstoreapi.herokuapp.com/user/cart/remove", {
+    fetch("localhost:3000/user/cart/remove", {
       method: "post",
       headers: {
         Accept: "application/json, text/plain, */*",
@@ -147,7 +147,7 @@ const actions = {
   },
   getNewArrivals() {
     var products;
-    fetch("https://crushstoreapi.herokuapp.com/products")
+    fetch("localhost:3000/products")
       .then((response) => response.json())
       .then((res) => (products = res))
       .then(() => {
@@ -163,7 +163,7 @@ const actions = {
       });
   },
   getCategories({ commit }) {
-    fetch(`https://crushstoreapi.herokuapp.com/category`)
+    fetch(`localhost:3000/category`)
       .then((response) => response.json())
       .then((res) => {
         commit("getCategories", res);

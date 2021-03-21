@@ -57,7 +57,7 @@ export default {
   },
   mounted() {
     fetch(
-      `https://crushstoreapi.herokuapp.com/products/details/${this.$route.params.productid}`
+      `localhost:3000/products/details/${this.$route.params.productid}`
     )
       .then((response) => response.json())
       .then((res) => (this.product = res[0]))
