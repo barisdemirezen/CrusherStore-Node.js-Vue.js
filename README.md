@@ -3,6 +3,11 @@
 ### Live example link: [Crush Store](https://crushstorevue.herokuapp.com) ###
 * **I Know there are some bugs with routing on live example. Since I have finished my objectives, I'm not really willing to spend time on there bugs**
 
+### Please install all node-modules for both projects before starting on local using; ###
+```
+npm install
+```
+
 
 ### Technologies Used ###
 #### Front-end #####
